@@ -1,0 +1,37 @@
+// Link: https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/E
+/*
+I have conclode this algorithem from:
+sum of Arthemitec sequance in renge from L to R:
+((First Number + last Number)/2) * number of numbers from L to R, to this formula:
+(-1 * -sqrt(1 + 8 * num)) / 2
+. this while loop runs at most 2 times.
+*/
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+
+int main(){
+    long long num, counter = 0, l, res;
+
+    cin >> num;
+
+    l = (-1 * -sqrt(1 + 8 * num)) / 2;
+
+    while(true){
+        counter++;
+        cout << counter << endl;
+        res = (l + pow(l, 2)) / 2;
+        
+        if(res > num){
+            l--;
+        } else {
+            cout << l;
+            return 0;
+        }
+    }
+}
